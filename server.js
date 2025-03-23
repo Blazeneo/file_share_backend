@@ -3,11 +3,11 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 const app = express();
-const alorigin =ENV.origin;
+
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: alorigin,
+        origin: "https://file-share-frontend-kappa.vercel.app/",
         methods: ["GET", "POST"]
     }
 });
