@@ -3,11 +3,11 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 const app = express();
-
+const org =process.env.origin;
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://file-share-frontend-luxtngn4i-blazeneos-projects.vercel.app",
+        origin: org,
         methods: ["GET", "POST"]
     }
 });
